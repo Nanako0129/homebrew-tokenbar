@@ -4,11 +4,13 @@ Homebrew tap for [**TokenBar**](https://github.com/Nanako0129/TokenBar) — an A
 token usage monitor for the macOS menu bar.
 
 ```sh
-brew install --cask Nanako0129/tokenbar/tokenbar
+brew tap nanako0129/tokenbar
+brew install --cask tokenbar
 ```
 
-That fully-qualified `user/tap/cask` form auto-taps this repo
-(`Nanako0129/homebrew-tokenbar`) and installs the `tokenbar` cask.
+Homebrew lowercases the tap owner, so the tap is `nanako0129/tokenbar` (this repo
+is `Nanako0129/homebrew-tokenbar`). Recent Homebrew requires the explicit
+`brew tap` before installing a third-party cask.
 
 The cask (`Casks/tokenbar.rb`) is bumped automatically by TokenBar's release
 workflow on each tagged release — `version` and `sha256` are patched to point at
