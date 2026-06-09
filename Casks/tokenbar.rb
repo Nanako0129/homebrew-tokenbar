@@ -1,8 +1,8 @@
 cask "tokenbar" do
-  version "0.4.1"
-  sha256 "3aec7102f6d757f5b77a8f1f64844b0a5e42041d79b39ce4bcf766265d23581e"
+  version "0.4.2"
+  sha256 "408fe3f228a1235f17de3353a78bc12e7ac9549ec2df6cdede5a597cd5bb1708"
 
-  url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar_#{version}_aarch64.dmg"
+  url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar.app.tar.gz"
   name "TokenBar"
   desc "Menubar dashboard for local AI token usage"
   homepage "https://github.com/Nanako0129/TokenBar"
@@ -16,6 +16,11 @@ cask "tokenbar" do
   depends_on arch: :arm64
 
   app "TokenBar.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+      args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar.app"]
+  end
 
   zap trash: [
     "~/Library/Application Support/com.nyanako.tokenbar",
