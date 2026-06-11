@@ -2,10 +2,10 @@ cask "tokenbar" do
   version "0.4.5"
   sha256 "8bcfcee077b5419ce79d73636fa3b2654671b6a7cb2672bd1ac2f3e0a4b782b7"
 
-  url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar.app.tar.gz"
+  url "https://github.com/Nanako0129/TokenBar-Tauri/releases/download/v#{version}/TokenBar.app.tar.gz"
   name "TokenBar"
   desc "Menubar dashboard for local AI token usage"
-  homepage "https://github.com/Nanako0129/TokenBar"
+  homepage "https://github.com/Nanako0129/TokenBar-Tauri"
 
   livecheck do
     url :url

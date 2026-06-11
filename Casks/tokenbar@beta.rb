@@ -2,10 +2,10 @@ cask "tokenbar@beta" do
   version "1.0.0-beta.4"
   sha256 "53187a98b3a920ec0cfbe5e7f29a3006316202e482ade08e96fa53e6a74a8fdd"
 
-  url "https://github.com/Nanako0129/TokenBar-Native/releases/download/v#{version}/TokenBar-Beta.app.tar.gz"
+  url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar-Beta.app.tar.gz"
   name "TokenBar Beta"
   desc "Menubar dashboard for local AI token usage (native beta)"
-  homepage "https://github.com/Nanako0129/TokenBar-Native"
+  homepage "https://github.com/Nanako0129/TokenBar"
 
   auto_updates true
   depends_on macos: ">= :sonoma"
