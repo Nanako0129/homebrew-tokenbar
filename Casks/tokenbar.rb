@@ -1,18 +1,14 @@
 cask "tokenbar" do
-  version "0.4.5"
-  sha256 "8bcfcee077b5419ce79d73636fa3b2654671b6a7cb2672bd1ac2f3e0a4b782b7"
+  version "1.0.0"
+  sha256 "dc48459e781f09e3e9493e4fb1d21d5c8b8ec636a6ee9958d9eb3ceaf2f0e062"
 
-  url "https://github.com/Nanako0129/TokenBar-Tauri/releases/download/v#{version}/TokenBar.app.tar.gz"
+  url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar.app.tar.gz"
   name "TokenBar"
   desc "Menubar dashboard for local AI token usage"
-  homepage "https://github.com/Nanako0129/TokenBar-Tauri"
+  homepage "https://github.com/Nanako0129/TokenBar"
 
-  livecheck do
-    url :url
-    strategy :github_latest
-  end
-
-  depends_on macos: ">= :big_sur"
+  auto_updates true
+  depends_on macos: ">= :sonoma"
   depends_on arch: :arm64
 
   app "TokenBar.app"
@@ -26,6 +22,6 @@ cask "tokenbar" do
     "~/Library/Application Support/com.nyanako.tokenbar",
     "~/Library/Caches/com.nyanako.tokenbar",
     "~/Library/Preferences/com.nyanako.tokenbar.plist",
-    "~/Library/Saved Application State/com.nyanako.tokenbar.savedState",
+    "~/Library/Preferences/com.nyanako.tokenbar.beta.plist",
   ]
 end
