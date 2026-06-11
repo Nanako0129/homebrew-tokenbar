@@ -7,6 +7,8 @@ cask "tokenbar@beta" do
   desc "Menubar dashboard for local AI token usage (native beta)"
   homepage "https://github.com/Nanako0129/TokenBar"
 
+  deprecate! date: "2026-06-11", because: :discontinued
+
   auto_updates true
   depends_on macos: ">= :sonoma"
   depends_on arch: :arm64
@@ -17,6 +19,12 @@ cask "tokenbar@beta" do
     system_command "/usr/bin/xattr",
       args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar Beta.app"]
   end
+
+  caveats <<~EOS
+    The separate beta app retired at v1.0.0. Install the stable app and
+    enable Settings → "Receive beta updates" for prerelease builds:
+      brew install --cask nanako0129/tokenbar/tokenbar
+  EOS
 
   zap trash: [
     "~/Library/Application Support/com.nyanako.tokenbar.beta",
