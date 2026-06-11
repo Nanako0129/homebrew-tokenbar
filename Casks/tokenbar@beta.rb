@@ -10,25 +10,25 @@ cask "tokenbar@beta" do
   deprecate! date: "2026-06-11", because: :discontinued
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "TokenBar Beta.app"
 
   postflight do
     system_command "/usr/bin/xattr",
-      args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar Beta.app"]
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar Beta.app"]
   end
-
-  caveats <<~EOS
-    The separate beta app retired at v1.0.0. Install the stable app and
-    enable Settings → "Receive beta updates" for prerelease builds:
-      brew install --cask nanako0129/tokenbar/tokenbar
-  EOS
 
   zap trash: [
     "~/Library/Application Support/com.nyanako.tokenbar.beta",
     "~/Library/Caches/com.nyanako.tokenbar.beta",
     "~/Library/Preferences/com.nyanako.tokenbar.beta.plist",
   ]
+
+  caveats <<~EOS
+    The separate beta app retired at v1.0.0. Install the stable app and
+    enable Settings → "Receive beta updates" for prerelease builds:
+      brew install --cask nanako0129/tokenbar/tokenbar
+  EOS
 end

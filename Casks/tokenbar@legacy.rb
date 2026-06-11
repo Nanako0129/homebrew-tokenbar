@@ -8,22 +8,15 @@ cask "tokenbar@legacy" do
   homepage "https://github.com/Nanako0129/TokenBar-Tauri"
 
   conflicts_with cask: "tokenbar"
-
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
   depends_on arch: :arm64
 
   app "TokenBar.app"
 
   postflight do
     system_command "/usr/bin/xattr",
-      args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar.app"]
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar.app"]
   end
-
-  caveats <<~EOS
-    This is the final Tauri-based TokenBar, kept for macOS 11–13.
-    On macOS 14+ install the actively developed native app instead:
-      brew install --cask nanako0129/tokenbar/tokenbar
-  EOS
 
   zap trash: [
     "~/Library/Application Support/com.nyanako.tokenbar",
@@ -31,4 +24,10 @@ cask "tokenbar@legacy" do
     "~/Library/Preferences/com.nyanako.tokenbar.plist",
     "~/Library/Saved Application State/com.nyanako.tokenbar.savedState",
   ]
+
+  caveats <<~EOS
+    This is the final Tauri-based TokenBar, kept for macOS 11–13.
+    On macOS 14+ install the actively developed native app instead:
+      brew install --cask nanako0129/tokenbar/tokenbar
+  EOS
 end
