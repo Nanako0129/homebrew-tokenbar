@@ -4,7 +4,7 @@ cask "tokenbar@legacy" do
 
   url "https://github.com/Nanako0129/TokenBar-Tauri/releases/download/v#{version}/TokenBar.app.tar.gz"
   name "TokenBar Legacy"
-  desc "Menubar dashboard for local AI token usage (final Tauri build, macOS 11+)"
+  desc "Menubar dashboard for local AI token usage (final Tauri build)"
   homepage "https://github.com/Nanako0129/TokenBar-Tauri"
 
   conflicts_with cask: "tokenbar"
