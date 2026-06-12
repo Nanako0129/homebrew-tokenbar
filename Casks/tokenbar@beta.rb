@@ -7,7 +7,9 @@ cask "tokenbar@beta" do
   desc "Menubar dashboard for local AI token usage (native beta)"
   homepage "https://github.com/Nanako0129/TokenBar"
 
-  deprecate! date: "2026-06-11", because: :discontinued
+  disable! date:    "2026-06-12",
+           because: "retired at v1.0.0 — install the stable cask instead: " \
+                    "brew install --cask nanako0129/tokenbar/tokenbar"
 
   auto_updates true
   depends_on macos: :sonoma
