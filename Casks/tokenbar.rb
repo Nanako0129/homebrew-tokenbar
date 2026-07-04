@@ -8,7 +8,7 @@ cask "tokenbar" do
   homepage "https://github.com/Nanako0129/TokenBar"
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "TokenBar.app"
