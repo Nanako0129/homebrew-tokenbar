@@ -1,6 +1,6 @@
 cask "tokenbar" do
-  version "1.6.0"
-  sha256 "24305ef491d7213a549040794b5c0d2779fbbddcb25c81bd1a1fa5bf90ddf72e"
+  version "1.6.1"
+  sha256 "45c5e2b96794993063b14d48756e763d055bc33b5115e47b3001b209fedd914b"
 
   url "https://github.com/Nanako0129/TokenBar/releases/download/v#{version}/TokenBar.app.tar.gz"
   name "TokenBar"
