@@ -13,9 +13,8 @@ cask "tokenbar" do
 
   app "TokenBar.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-      args: ["-dr", "com.apple.quarantine", "#{appdir}/TokenBar.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/TokenBar.app"]
   end
 
   zap trash: [
